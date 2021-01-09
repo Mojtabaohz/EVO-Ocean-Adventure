@@ -13,6 +13,10 @@ class Scene1 extends Phaser.Scene {
           frameWidth: 32,
           frameHeight: 32
       })
+      this.load.spritesheet("enemy","assets/spritesheets/enemy.png",{
+        frameWidth: 32,
+        frameHeight: 32
+    })
       this.load.spritesheet("evo","assets/spritesheets/evo.png",{
         frameHeight: 46,
         frameWidth: 46
@@ -26,5 +30,8 @@ class Scene1 extends Phaser.Scene {
     create() {
       this.add.text(20, 20, "Loading game...");
       this.scene.start("playGame");
+    }
+    update(){
+      this.add.text(100,100,gameSettings.evoPoint);
     }
   }
